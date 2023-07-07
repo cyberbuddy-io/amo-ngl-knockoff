@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign-up</title>
+    <title>Login</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <!-- font awesome -->
@@ -21,14 +21,28 @@
     />
   </head>
   <body>
+    <div class="strip">
+      AskMeOut &nbsp; &nbsp; &nbsp;* &nbsp; &nbsp; &nbsp; Confessions &nbsp;
+      &nbsp; &nbsp;* &nbsp; &nbsp; &nbsp; Opinions &nbsp; &nbsp; &nbsp;* &nbsp;
+      &nbsp; &nbsp; Anonymous Messages &nbsp; &nbsp; &nbsp;* &nbsp; &nbsp;
+      &nbsp; AskMeOut &nbsp; &nbsp; &nbsp;* &nbsp; &nbsp; &nbsp; Confessions
+      &nbsp; &nbsp; &nbsp;* &nbsp; &nbsp; &nbsp; Opinions &nbsp; &nbsp; &nbsp;*
+      &nbsp; &nbsp; &nbsp; Anonymous Messages
+    </div>
+    <br />
     <div class="container">
-      <h2>login</h2>
-      <input type="text" placeholder="Username" id="username" class="inp" />
-      <input type="password" id="password" placeholder="Password" class="inp"/><br />
-      <button type="submit" id="btn">
-        Go  <i class="fas fa-arrow-right"></i>
+      <h2>Login</h2>
+      <br /><br /><br />
+      <input type="text" placeholder="Username" id="username" />
+      <br /><br /><br /><br />
+      <input type="password" id="password" placeholder="Password" class="inp" />
+      <button id="loginToggleButton" onclick="togglePasswordVisibility()">
+        <i id="toggleIcon" class="fa fa-eye"></i>
       </button>
-      <p class="right">New User? <a href="signup.html">Sign Up</a></p>
+      <br /><br /><br /><br /><br /><br />
+      <button type="submit" id="btn">Go <img src="Arrow 1.png" /></button><br />
+      <p class="right"><a href="signup.html">New User? Sign Up</a></p>
     </div>
   </body>
-</html>
+  <script type="text/javascript" src="main.js"></script>
+  </html>

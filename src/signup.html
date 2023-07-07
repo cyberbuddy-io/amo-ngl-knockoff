@@ -21,18 +21,38 @@
     />
   </head>
   <body>
+    <div class="strip">
+      AskMeOut &nbsp; &nbsp; &nbsp;* &nbsp; &nbsp; &nbsp; Confessions &nbsp;
+      &nbsp; &nbsp;* &nbsp; &nbsp; &nbsp; Opinions &nbsp; &nbsp; &nbsp;* &nbsp;
+      &nbsp; &nbsp; Anonymous Messages &nbsp; &nbsp; &nbsp;* &nbsp; &nbsp;
+      &nbsp; AskMeOut &nbsp; &nbsp; &nbsp;* &nbsp; &nbsp; &nbsp; Confessions
+      &nbsp; &nbsp; &nbsp;* &nbsp; &nbsp; &nbsp; Opinions &nbsp; &nbsp; &nbsp;*
+      &nbsp; &nbsp; &nbsp; Anonymous Messages
+    </div>
+    <br />
     <div class="container">
-      <h2>Sign-up</h2>
+      <h2>Sign-Up</h2>
       <input type="text" placeholder="Username" id="username" />
       <p>HINT: Enter your instagram username</p>
-      <br />
-      <input type="password" id="password" placeholder="Password" class="inp"/><br />
-      <input
-        type="password" id="rePassword" class="inp" placeholder="Re-enter Password"/><br />
-      <button type="submit" id="btn">
-        Go  <i class="fas fa-arrow-right"></i>
+      <br /><br />
+      <input type="password" id="password" placeholder="Password" class="inp" />
+      <button id="toggleButton" onclick="togglePasswordVisibility()">
+        <i id="toggleIcon" class="fa fa-eye"></i>
       </button>
-      <p class="right">Already a User? <a href="login.html">Login</a></p>
+      <br /><br /><br /><br />
+      <input
+        type="password"
+        id="repassword"
+        class="inp"
+        placeholder="Re-enter Password"
+      />
+      <button id="retoggleButton" onclick="retogglePasswordVisibility()">
+        <i id="retoggleIcon" class="fa fa-eye"></i>
+      </button>
+      <br /><br /><br /><br /><br /><br />
+      <button type="submit" id="btn">Go <img src="Arrow 1.png" /></button>
+      <p class="right"><a href="login.html">Already a User? Login</a></p>
     </div>
   </body>
+  <script type="text/javascript" src="main.js"></script>
 </html>
