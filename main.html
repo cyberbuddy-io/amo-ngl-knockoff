@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Ask Me Out</title>
+    <link rel="stylesheet" href="main.css" />
 
     <!-- font awesome -->
     <link
@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=PT+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Milonga&family=Montserrat&family=Poppins&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -30,23 +30,34 @@
       &nbsp; &nbsp; &nbsp;* &nbsp; &nbsp; &nbsp; Anonymous Messages &nbsp; &nbsp; &nbsp; AskMeOut &nbsp; &nbsp; &nbsp;* &nbsp; &nbsp; &nbsp;
       Confessions
     </div>
-    <br />
+
     <div class="container">
-      <h2>Login</h2>
-      <br /><br /><br />
-      <input type="text" placeholder="Username" id="username" />
-      <br /><br /><br /><br />
-      <input type="password" id="password" placeholder="Password" class="inp" />
-      <button id="loginToggleButton" onclick="togglePasswordVisibility()">
-        <i id="toggleIcon" class="fa fa-eye"></i>
-      </button>
-      <br /><br /><br /><br /><br /><br />
-      <button type="submit" id="btn">
+      <!-- white wala -->
+      <div id="upper">
+        <i id="icon" class="fas fa-user"></i>
+        <div>
+          <p id="user">@username</p>
+          <p id="option">I am waiting for a pickup line!!</p>
+        </div>
+        <span class="emoji">&#x1F609;</span>
+      </div>
+      <!-- input text -->
+      <div id="lower">
+        <textarea
+          type="text"
+          rows="4"
+          id="msg"
+          placeholder="Send your message anonymously"
+        ></textarea>
+      </div>
+    </div>
+
+    <div id="buttons">
+      <button type="submit" class="btn" id="sugg">Suggestions</button>
+      <button type="submit" class="btn" id="go">
         Go <img id="white_arrow" src="Arrow 1.png" />
-        <img id="black_arrow" src="Arrow 2.png" /></button
+        <img id="black_arrow" src="Arrow 2.png" /> </button
       ><br />
-      <p class="right"><a href="signup.html">New User? Sign Up</a></p>
     </div>
   </body>
-  <script type="text/javascript" src="main.js"></script>
 </html>

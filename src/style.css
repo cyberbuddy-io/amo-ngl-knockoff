@@ -95,10 +95,14 @@ a:active {
   display: none;
 }
 
+#black_arrow {
+  display: none;
+}
+
 button {
   font-family: "PT Mono", monospace;
   background-color: transparent;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 50px;
   padding: 6px 60px;
   font-size: 27px;
@@ -110,8 +114,15 @@ button {
 
 button:hover {
   background-color: rgb(201, 201, 201);
-  border: 1px solid black;
+  border: 2px solid black;
   cursor: pointer;
+  color: black;
+  #white_arrow{
+    display: none;
+  }
+  #black_arrow{
+    display: inline-block;
+  }
   transition-duration: 1s;
 }
 
