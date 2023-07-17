@@ -49,40 +49,6 @@ a:active {
   margin-right: 30px;
 }
 
-#toggleButton {
-  position: absolute;
-  top: 49%;
-  right: -15px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-#retoggleButton {
-  position: absolute;
-  top: 62%;
-  right: -15px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-#loginToggleButton {
-  position: absolute;
-  top: 54%;
-  right: -15px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.fa-eye-slash {
-  display: none;
-}
-
 #black_arrow {
   display: none;
 }
@@ -126,14 +92,6 @@ button:hover {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.eye{
-  border: none;
-}
-.eye:focus{
-  color: black;
-  outline: none;
-}
-
 /* Media queries for different screen widths */
 
 @media (max-width: 800px) {
@@ -167,15 +125,6 @@ button:hover {
   img{
     width: 32px;
   }
-  #toggleButton{
-    padding-top: 20px;
-  }
-  #retoggleButton{
-    padding-top: 36px;
-  }
-  #loginToggleButton{
-    padding-top: 70px;
-  }
 }
 
 @media (max-width: 380px) {
@@ -204,14 +153,5 @@ button:hover {
   }
   p {
     font-size: 10px;
-  }
-  #toggleButton{
-    padding-bottom: 45px;
-  }
-  #retoggleButton{
-    padding-bottom: 25px;
-  }
-  #loginToggleButton{
-    padding-bottom: 50px;
   }
 }

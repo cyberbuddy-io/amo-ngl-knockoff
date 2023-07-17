@@ -1,29 +1,23 @@
-function togglePasswordVisibility() {
-    let passwordInput = document.getElementById("password");
-    let toggleIcon = document.getElementById("toggleIcon");
+//for password
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
 
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggleIcon.classList.remove("fa-eye");
-        toggleIcon.classList.add("fa-eye-slash");
-    } else {
-        passwordInput.type = "password";
-        toggleIcon.classList.remove("fa-eye-slash");
-        toggleIcon.classList.add("fa-eye");
-    }
-}
+togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
 
-function retogglePasswordVisibility() {
-    let passwordInput = document.getElementById("repassword");
-    let toggleIcon = document.getElementById("retoggleIcon");
+//for re-enter password
+const retogglePassword = document.querySelector('#retogglePassword');
+const repassword = document.querySelector('#repassword');
 
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        toggleIcon.classList.remove("fa-eye");
-        toggleIcon.classList.add("fa-eye-slash");
-    } else {
-        passwordInput.type = "password";
-        toggleIcon.classList.remove("fa-eye-slash");
-        toggleIcon.classList.add("fa-eye");
-    }
-}
+retogglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = repassword.getAttribute('type') === 'password' ? 'text' : 'password';
+    repassword.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
