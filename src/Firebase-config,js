@@ -1,0 +1,15 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+const firebaseConfig = {
+  apiKey: "AIzaSyCNBKA2-9-hwSR51W_dTeQkUVKM_CHAyO0",
+  authDomain: "ngl-knockoff.firebaseapp.com",
+  projectId: "ngl-knockoff",
+  storageBucket: "ngl-knockoff.appspot.com",
+  messagingSenderId: "303503322190",
+  appId: "1:303503322190:web:1f933c1fe33d60c52de71f",
+  measurementId: "G-SQX6ZCEGER"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
