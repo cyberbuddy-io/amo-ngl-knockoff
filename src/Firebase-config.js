@@ -1,8 +1,10 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app';
 import { getAnalytics } from "firebase/analytics";
+
 const firebaseConfig = {
   apiKey: "AIzaSyCNBKA2-9-hwSR51W_dTeQkUVKM_CHAyO0",
   authDomain: "ngl-knockoff.firebaseapp.com",
+  databaseURL: "https://ngl-knockoff-default-rtdb.firebaseio.com",
   projectId: "ngl-knockoff",
   storageBucket: "ngl-knockoff.appspot.com",
   messagingSenderId: "303503322190",
@@ -11,5 +13,5 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
+const db = getAnalytics(app);
+export default db;

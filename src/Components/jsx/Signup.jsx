@@ -1,20 +1,25 @@
-import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Arrow1 from '../imgs/Arrow 1.png'
 import Arrow2 from '../imgs/Arrow 2.png'
 import '../css/signup.css'
+import db from '../../Firebase-config'
 
 function Signup() {
 
+  let [user, setUser] = useState('')
+  let [pass, setPass] = useState('')
   function send() {
-    console.log('helo')
-    //   var username = document.getElementById('username').value;
-    //   var password = document.getElementById('password').value;
-    //   if (username == '' || password == '') {
-    //     const alert = () => {
-    //       alert('Please enter data');
-    //     }
-    //   }
+    console.log(user + ' ' + pass)
+    if (user == '' || pass == '') {
+      alert('Please enter data');
+      return;
+    } else {
+      db.ref(user).set({
+        Password: pass
+      })
+      
+    }
   }
 
   let style1 = {
@@ -26,20 +31,22 @@ function Signup() {
       <div className='signup'>
         <div className="container">
           <h2>Sign-Up</h2>
-          <input type="text" placeholder="Username" id="username" />
+          <input type="text" placeholder="Username" onChange={(e) => setUser(e.target.value)} />
           <p>HINT: Enter your instagram username</p>
-          <br /><br />
-          <input type="password" id="password" placeholder="Password" className="inp" />
+          <br />
+          <p>HEY! {user}</p>
+          <br />
+          <input type="password" placeholder="Password" className="inp" onChange={(e) => setPass(e.target.value)} />
           <i className="far fa-eye" id="togglePassword" style={style1}></i>
 
           <br /><br />
-          <input
+          {/* <input
             type="password"
             id="repassword"
             className="inp"
             placeholder="Re-enter Password"
           />
-          <i className="far fa-eye" id="retogglePassword" style={style1}></i>
+          <i className="far fa-eye" id="retogglePassword" style={style1}></i> */}
 
           <br /><br /><br />
           <button type="submit" id="btn" onClick={send}>
