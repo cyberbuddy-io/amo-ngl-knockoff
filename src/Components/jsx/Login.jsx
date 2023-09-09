@@ -1,11 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Arrow1 from './Arrow 1.png'
-import Arrow2 from './Arrow 2.png'
-// import './style.css';
+import Arrow1 from '../imgs/Arrow 1.png'
+import Arrow2 from '../imgs/Arrow 2.png'
+// import '../css/style.css';
 
 function Login() {
   // let abc = 'hahahaha'
+
   let style1 = {
     marginLeft: '-30px',
     cursor: 'pointer'

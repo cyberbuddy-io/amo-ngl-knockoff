@@ -1,8 +1,8 @@
 import React from 'react';
 import {Route, Routes } from 'react-router-dom';
-import Login from './Components/Login';
-import Signup from './Components/Signup';
-import Main from './Components/Main';
+import Login from './Components/jsx/Login';
+import Signup from './Components/jsx/Signup';
+import Main from './Components/jsx/Main';
 // import Navigation from './Components/Navigation'; // Import the Navigation component
 
 function App() {

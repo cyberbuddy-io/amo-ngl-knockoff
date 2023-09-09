@@ -1,5 +1,7 @@
 import React from 'react'
-// import './main.css'
+import Arrow1 from '../imgs/Arrow 1.png'
+import Arrow2 from '../imgs/Arrow 2.png'
+// import '../css/main.css'
 
 function Main() {
   return (
@@ -28,8 +30,8 @@ function Main() {
     <div id="buttons">
       <button type="submit" class="btn" id="sugg">Suggestions</button>
       <button type="submit" class="btn" id="go">
-        Go <img id="white_arrow" src="Arrow 1.png" />
-        <img id="black_arrow" src="Arrow 2.png" /> </button>
+        Go <img id="white_arrow" src={Arrow1} />
+        <img id="black_arrow" src={Arrow2} /> </button>
       <br />
     </div>
     </div>
