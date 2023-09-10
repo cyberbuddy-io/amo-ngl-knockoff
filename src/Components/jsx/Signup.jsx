@@ -3,21 +3,27 @@ import { Link } from 'react-router-dom'
 import Arrow1 from '../imgs/Arrow 1.png'
 import Arrow2 from '../imgs/Arrow 2.png'
 import '../css/signup.css'
-import db from '../../Firebase-config'
+
+//import firebase 
+import { db } from '../../firebase';
+import { set, ref } from 'firebase/database';
 
 function Signup() {
 
   let [user, setUser] = useState('')
   let [pass, setPass] = useState('')
+
   function send() {
     console.log(user + ' ' + pass)
     if (user == '' || pass == '') {
       alert('Please enter data');
       return;
     } else {
-      db.ref(user).set({
-        Password: pass
+      set(ref(db, 'username/' + user), {
+        password: pass
       })
+      alert('signup successful')
+      window.location.href = '/login';
       
     }
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Login from './Components/jsx/Login';
 import Signup from './Components/jsx/Signup';
 import Main from './Components/jsx/Main';
@@ -8,15 +8,15 @@ import Main from './Components/jsx/Main';
 
 function App() {
   return (
-      <div className="App">
-        {/* <Navigation /> */}
-        <Routes>
-          <Route path="/main" element={<Main/>} />
-          <Route path="/signup" element={<Signup/>} />
-          <Route path="/login" element={<Login/>} />
-          {/* Add other routes and components as needed */}
-        </Routes>
-      </div>
+    <div className="App">
+      {/* <Navigation /> */}
+      <Routes>
+        <Route path="/main" element={<Main />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        {/* Add other routes and components as needed */}
+      </Routes>
+    </div>
   );
 }
 
