@@ -15,6 +15,12 @@ function Main() {
 
   function sendmsg() {
     console.log(user);
+    //if msg empty, alert
+    if(msg==''){
+      alert('plz enter something bruh!')
+      return;
+    }
+
     // first get number
     get(ref(db, '/username/' + user + '/credentials/number'))
       .then((snapshot) => {
