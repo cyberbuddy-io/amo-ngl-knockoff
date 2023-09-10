@@ -13,28 +13,25 @@ function Login() {
   let [user, setUser] = useState('');
   let [pass, setPass] = useState('');
 
-  function match(){
-    get(ref(db, 'username/' + user + '/password'))
-    .then((snapshot)=>{
-      if(snapshot.exists()){
-        //username exists!
-        const p=snapshot.val();
-        console.log(p);
-        //if password matches
-        if(pass == p){
-          alert("password matches");
-          window.location.href='/main#'+user;
-        }else{
-          alert("password does not match. plz try again");
+  function match() {
+    get(ref(db, 'username/' + user + '/credentials/password'))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          //username exists!
+          const p = snapshot.val();
+          console.log(p);
+          //if password matches
+          if (pass == p) {
+            alert("password matches");
+            window.location.href='/main#'+user;
+          } else {
+            alert("password does not match. plz try again");
+          }
+        } else {
+          alert('no user found. kindly signup');
+          window.location.href='/signup';
         }
-      }else{
-        alert('no user found. kindly signup');
-        window.location.href='/signup';
-      }
-    })
-    .catch((error)=>{
-      console.log('error in reading: ' + error);
-    });
+      })
   }
 
   let style1 = {

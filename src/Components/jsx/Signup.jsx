@@ -22,8 +22,10 @@ function Signup() {
     }
     
     else {
-      set(ref(db, 'username/' + user), {
-        password: pass
+      set(ref(db, 'username/' + user + '/credentials/'), {
+        password: pass,
+        username: user,
+        number: 0
       })
 
       alert('signup successful')
