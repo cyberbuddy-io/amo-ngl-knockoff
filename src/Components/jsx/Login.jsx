@@ -9,6 +9,10 @@ import { db } from '../../firebase';
 import { ref, get } from 'firebase/database';
 
 function Login() {
+
+  //title
+  document.title = 'Login'
+
   // let abc = 'hahahaha'
   let [user, setUser] = useState('');
   let [pass, setPass] = useState('');
@@ -23,13 +27,13 @@ function Login() {
           //if password matches
           if (pass == p) {
             alert("password matches");
-            window.location.href='/main#'+user;
+            window.location.href = '/main#' + user;
           } else {
             alert("password does not match. plz try again");
           }
         } else {
           alert('no user found. kindly signup');
-          window.location.href='/signup';
+          window.location.href = '/signup';
         }
       })
   }

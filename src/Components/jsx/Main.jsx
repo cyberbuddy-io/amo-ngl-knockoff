@@ -9,6 +9,9 @@ import { set, ref, get, update } from 'firebase/database'
 
 function Main() {
 
+  // title
+  document.title = 'Send msgs!'
+
   let [msg, setMsg] = useState('');
   let user = window.location.href.split('#')[1];
   var n;
@@ -16,7 +19,7 @@ function Main() {
   function sendmsg() {
     console.log(user);
     //if msg empty, alert
-    if(msg==''){
+    if (msg == '') {
       alert('plz enter something bruh!')
       return;
     }
@@ -35,8 +38,8 @@ function Main() {
   function sendToFirebase(n) {
     //update number
     update(ref(db, 'username/' + user + '/credentials'), {
-      number:n+1
-    }) 
+      number: n + 1
+    })
 
     //send msg
     set(ref(db, 'username/' + user + '/messages/' + n), {

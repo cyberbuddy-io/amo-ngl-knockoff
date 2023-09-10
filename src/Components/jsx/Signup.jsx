@@ -10,9 +10,11 @@ import { set, ref } from 'firebase/database';
 
 function Signup() {
 
+  //title
+  document.title = 'Signup'
   let [user, setUser] = useState('')
   let [pass, setPass] = useState('')
-
+  
   function send() {
     console.log(user + ' ' + pass)
 
@@ -20,7 +22,7 @@ function Signup() {
       alert('Please enter data');
       return;
     }
-    
+
     else {
       set(ref(db, 'username/' + user + '/credentials/'), {
         password: pass,
@@ -36,7 +38,7 @@ function Signup() {
       }
 
       delay();
-      
+
     }
   }
 
