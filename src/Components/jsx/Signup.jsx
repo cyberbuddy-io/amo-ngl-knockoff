@@ -15,15 +15,25 @@ function Signup() {
 
   function send() {
     console.log(user + ' ' + pass)
+
     if (user == '' || pass == '') {
       alert('Please enter data');
       return;
-    } else {
+    }
+    
+    else {
       set(ref(db, 'username/' + user), {
         password: pass
       })
+
       alert('signup successful')
-      window.location.href = '/login';
+
+      async function delay() {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        window.location.href = '/login';
+      }
+
+      delay();
       
     }
   }
