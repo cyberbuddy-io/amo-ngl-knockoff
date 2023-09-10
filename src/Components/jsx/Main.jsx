@@ -46,6 +46,9 @@ function Main() {
       message: msg
     })
 
+    alert('message sent successfully!')
+    window.location.reload()
+
     return
 
 
