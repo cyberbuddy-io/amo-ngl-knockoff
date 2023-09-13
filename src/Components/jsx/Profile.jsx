@@ -27,7 +27,7 @@ function Profile() {
     const addMsgs = []
     for (var i = 0; i < n; i++) {
       console.log(i)
-      get(ref(db, 'username/' + 'raghav' + '/messages/' + i + '/message'))
+      get(ref(db, 'username/' + user + '/messages/' + i + '/message'))
         .then((snapshot) => {
           let message = snapshot.val()
           console.log(message)
