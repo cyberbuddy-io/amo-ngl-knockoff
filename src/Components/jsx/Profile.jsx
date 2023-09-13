@@ -6,7 +6,7 @@ import { db } from '../../firebase'
 import { get, ref } from 'firebase/database'
 
 function Profile() {
-  let [numbers, setNumbers] = useState([])
+  let [msgs, setMsgs] = useState([])
 
   //first we will do for an example: raghav
   var n;
@@ -14,34 +14,37 @@ function Profile() {
     get(ref(db, 'username/' + 'raghav' + '/credentials/number'))
       .then((snapshot) => {
         n = snapshot.val()
-        console.log(n + 'msgs')
+        console.log(n + ' msgs')
+        //do loop from 1 to n, and do 'get' for each message
         loop(n)
       })
   }
 
-  // function loop(n) {
-  //   const numberArray = []
-  //   for (var i = 0; i < n; i++) {
-  //     console.log(i)
-  //     // {<LoadMsg msg={i}/>}
-  //     numberArray.push(i)
-  //   }
-  //   setNumbers(numberArray)
-  // }
-
+  //for msgs: 0 to n
   function loop(n) {
-    // for (var i = 0; i < n; i++) {
-      console.log(n)
-      // { <LoadMsg msg='arsh' /> }
-    // }
+    const addMsgs = []
+    for (var i = 0; i < n; i++) {
+      console.log(i)
+      get(ref(db, 'username/' + 'raghav' + '/messages/' + i + '/message'))
+        .then((snapshot) => {
+          let message = snapshot.val()
+          console.log(message)
+          addMsgs.push(message)
+        })
+    }
+    console.log(addMsgs)
+    setMsgs(addMsgs)
   }
 
   return (
     <div>
-      <h1>hello</h1>
       {<LoadMsg msg='arsh' />}
       <button onClick={show}>check</button><br />
-
+      <ul>
+        {msgs.map((msg, index) => (
+          <li key={index}>{msg}</li>
+        ))}
+      </ul>
     </div>
   )
 }

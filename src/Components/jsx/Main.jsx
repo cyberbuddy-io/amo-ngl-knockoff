@@ -61,7 +61,7 @@ function Main() {
         <div id="upper">
           <i id="icon" className="fab fa-instagram"></i>
           <div>
-            <p id="user">@username</p>
+            <p id="user">@{user}</p>
             <p id="option">I am waiting for a pickup line!!</p>
           </div>
           <span className="emoji">&#x1F609;</span>
