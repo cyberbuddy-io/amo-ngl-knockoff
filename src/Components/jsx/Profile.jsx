@@ -24,18 +24,19 @@ function Profile() {
 
   //for msgs: 0 to n
   function loop(n) {
-    const addMsgs = []
-    for (var i = 0; i < n; i++) {
-      console.log(i)
-      get(ref(db, 'username/' + user + '/messages/' + i + '/message'))
+    let promises = [];
+    for (let i = 0; i < n; i++) {
+      let promise = get(ref(db, 'username/' + user + '/messages/' + i + '/message'))
         .then((snapshot) => {
-          let message = snapshot.val()
-          console.log(message)
-          addMsgs.push(message)
-        })
+          return snapshot.val();
+        });
+      promises.push(promise);
     }
-    console.log(addMsgs)
-    setMsgs(addMsgs)
+  
+    Promise.all(promises).then((messages) => {
+      console.log(messages);
+      setMsgs(messages);
+    });
   }
 
   return (
