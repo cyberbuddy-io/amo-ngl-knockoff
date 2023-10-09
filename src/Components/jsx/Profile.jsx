@@ -1,17 +1,25 @@
-import React, { useState } from 'react'
-import LoadMsg from './LoadMsg'
+import React, { useState, useEffect } from 'react'
+import CopyLink from './CopyLink'
 
 //import firebase
 import { db } from '../../firebase'
 import { get, ref } from 'firebase/database'
 
 function Profile() {
-  let [msgs, setMsgs] = useState([])
+  let sharableLink = window.location.href.replace('profile', 'main')
+
+  let [msgs, setMsgs] = useState([]);
   let user = window.location.href.split('#')[1];
 
-  //first we will do for an example: raghav
+  //check in local storage if user is logged in:
+  let username = localStorage.getItem('user')
+  if (user !== username) {
+    window.location.href = '/login'
+  }
+
+  //to show msgs:
   var n;
-  function show() {
+  useEffect(() => {
     get(ref(db, 'username/' + user + '/credentials/number'))
       .then((snapshot) => {
         n = snapshot.val()
@@ -20,7 +28,7 @@ function Profile() {
         //do loop from 1 to n, and do 'get' for each message
         loop(n)
       })
-  }
+  }, []);
 
   //for msgs: 0 to n
   function loop(n) {
@@ -32,7 +40,7 @@ function Profile() {
         });
       promises.push(promise);
     }
-  
+
     Promise.all(promises).then((messages) => {
       console.log(messages);
       setMsgs(messages);
@@ -41,13 +49,23 @@ function Profile() {
 
   return (
     <div>
-      {<LoadMsg msg={user} />}
-      <button onClick={show}>check</button><br />
-      <ul>
-        {msgs.map((msg, index) => (
-          <li key={index}>{msg}</li>
-        ))}
-      </ul>
+      <h1>Hey {user}!</h1>
+
+      {/* links */}
+      <CopyLink sharableLink={sharableLink} />
+      <p>You can send this link to your firends:</p>
+
+      <h1>Here are your messages!</h1>
+      {msgs.length > 0 ? (
+        <ul>
+          {msgs.map((msg, index) => (
+            <li key={index}>{msg}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading...</p>
+      )}
+
     </div>
   )
 }
