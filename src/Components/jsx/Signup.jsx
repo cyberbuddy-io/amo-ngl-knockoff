@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Arrow1 from '../imgs/Arrow 1.png'
 import Arrow2 from '../imgs/Arrow 2.png'
@@ -15,6 +15,8 @@ function Signup() {
   let [user, setUser] = useState('')
   let [pass, setPass] = useState('')
   let [passChecker, setPassChecker] = useState('')
+  let passRef = useRef()
+  let [passwordShow, setPasswordShow] = useState(false)
 
   function check() {
     console.log(user + ' ' + pass)
@@ -25,19 +27,26 @@ function Signup() {
       return;
     }
 
+    //check password length
+    if (pass.length < 8) {
+      alert('Password must be at least 8 letters long')
+      passRef.current.focus()
+      return;
+    }
+
     //check for repeating username
     get(ref(db, 'username/' + user))
-    .then((snapshot)=>{
-      //username already exists
-      if(snapshot.exists()){
-        alert('Username already exists. Please try some other username!')
-        return;
-      }
-      //unique username
-      else{
-        send()
-      }
-    })
+      .then((snapshot) => {
+        //username already exists
+        if (snapshot.exists()) {
+          alert('Username already exists. Please try some other username!')
+          return;
+        }
+        //unique username
+        else {
+          send()
+        }
+      })
 
   }
 
@@ -68,10 +77,15 @@ function Signup() {
     }
   }
 
-  let style1 = {
-    marginLeft: '-30px',
-    cursor: 'pointer'
+  //toggle password visibility
+  function passShow() {
+    setPasswordShow(!passwordShow)
   }
+
+  // let style1 = {
+  //   marginLeft: '-30px',
+  //   cursor: 'pointer'
+  // }
   return (
     <>
       <div className='signup'>
@@ -82,8 +96,9 @@ function Signup() {
           <br />
           <p>HEY! {user}</p>
           <br />
-          <input type="password" placeholder="Password" className="inp" onChange={(e) => { setPass(e.target.value); checkPassLength() }} />
-          <i className="far fa-eye" id="togglePassword" style={style1}></i>
+          <input ref={passRef} type={passwordShow ? 'text' : 'password'} placeholder="Password" className="inp" onChange={(e) => { setPass(e.target.value); checkPassLength() }} /><br />
+          <input type="checkbox" onChange={passShow} style={{ width: '16px' }} />Show Password
+          {/* <i className="far fa-eye" id="togglePassword" style={style1}></i> */}
           <p>{passChecker}</p>
 
           <br /><br />
