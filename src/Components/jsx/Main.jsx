@@ -14,7 +14,16 @@ function Main() {
   document.title = 'Send msgs!'
 
   let [msg, setMsg] = useState('');
-  let user = window.location.href.split('?=')[1];
+  let index = window.location.href.indexOf('?=')
+  let index2 = window.location.href.indexOf('&')
+  let user;
+  console.log(index + ' ' + index2)
+  if (index2 == -1) {
+    user = window.location.href.split('?=')[1]
+    console.log(user)
+  } else {
+    user = window.location.href.substring(index + 2, index2)
+  }
   var n;
 
   function sendmsg() {
@@ -90,7 +99,7 @@ function Main() {
       </div>
 
       <p>Get your own AskMeOut Link!</p>
-      <button onClick={()=>{window.location.href='/signup'}}>Click Me</button>
+      <button onClick={() => { window.location.href = '/signup' }}>Click Me</button>
     </div>
   )
 }
