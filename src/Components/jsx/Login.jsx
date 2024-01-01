@@ -29,7 +29,7 @@ function Login() {
           if (pass === p) {
             window.localStorage.setItem('user', user)
             alert("password matches");
-            window.location.href = '/profile#' + user;
+            window.location.href = '/profile?=' + user;
           } else {
             alert("password does not match. plz try again");
             passRef.current.focus()

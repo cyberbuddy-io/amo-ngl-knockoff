@@ -62,7 +62,8 @@ function Signup() {
 
     async function delay() {
       await new Promise((resolve) => setTimeout(resolve, 1000))
-      window.location.href = '/login'
+      window.localStorage.setItem('user', user)
+      window.location.href = '/profile?=' + user
     }
 
     delay()

@@ -14,7 +14,7 @@ function Main() {
   document.title = 'Send msgs!'
 
   let [msg, setMsg] = useState('');
-  let user = window.location.href.split('#')[1];
+  let user = window.location.href.split('?=')[1];
   var n;
 
   function sendmsg() {

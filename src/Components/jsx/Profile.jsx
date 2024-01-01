@@ -9,7 +9,7 @@ function Profile() {
   let sharableLink = window.location.href.replace('profile', 'main')
 
   let [msgs, setMsgs] = useState([]);
-  let user = window.location.href.split('#')[1];
+  let user = window.location.href.split('?=')[1];
 
   //check in local storage if user is logged in:
   let username = localStorage.getItem('user')
