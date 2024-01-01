@@ -3,6 +3,7 @@ import Arrow1 from '../imgs/Arrow 1.png'
 import Arrow2 from '../imgs/Arrow 2.png'
 import '../css/main.css'
 import CopyLink from './CopyLink'
+import { Link } from 'react-router-dom'
 
 //import firebase
 import { db } from '../../firebase'
@@ -72,9 +73,9 @@ function Main() {
           <i id="icon" className="fab fa-instagram"></i>
           <div>
             <p id="user">@{user}</p>
-            <p id="option">I am waiting for a pickup line!!</p>
+            <p id="option">Chaliye shuru karte hai!!</p>
           </div>
-          <span className="emoji">&#x1F609;</span>
+          <span className="emoji">&#x1F31D;</span>
         </div>
         {/* <!-- input text --> */}
         <div id="lower">
@@ -100,6 +101,9 @@ function Main() {
 
       <p>Get your own AskMeOut Link!</p>
       <button onClick={() => { window.location.href = '/signup' }}>Click Me</button>
+
+      <br /><br />
+      <h3>Made by <Link to='https://avibedi1768.github.io' style={{ color: '#fff', textDecoration: 'none' }}>Arsh</Link></h3>
     </div>
   )
 }

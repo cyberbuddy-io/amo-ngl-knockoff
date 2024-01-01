@@ -118,6 +118,7 @@ function Signup() {
           </button>
           <p className="right"><Link to="/login">Already a User? Login</Link></p>
         </div>
+        <h3>Made by <Link to='https://avibedi1768.github.io' style={{ color: '#fff', textDecoration: 'none' }}>Arsh</Link></h3>
       </div>
     </>
   )

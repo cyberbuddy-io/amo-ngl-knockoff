@@ -66,10 +66,11 @@ function Login() {
           <button type="submit" id="btn" onClick={match}>
             Go <img id="white_arrow" src={Arrow1} />
             <img id="black_arrow" src={Arrow2} />
-            </button>
+          </button>
           <br />
           <p className="right"><Link to="/signup">New User? Sign Up</Link></p>
         </div>
+        <h3>Made by <Link to='https://avibedi1768.github.io' style={{ color: '#fff', textDecoration: 'none' }}>Arsh</Link></h3>
       </div>
     </>
   )
