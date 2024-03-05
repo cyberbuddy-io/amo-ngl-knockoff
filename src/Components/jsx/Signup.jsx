@@ -108,7 +108,7 @@ function Signup() {
             </div>
 
             <div className='signup-input-showPassword'>
-              <input type="checkbox" onChange={passShow} style={{ width: '16px' }} />Show Password
+              <input type="checkbox" onChange={passShow} style={{ width: '12px' }} /> Show Password
             </div>
 
             {/* <p>{passChecker}</p> */}
@@ -180,7 +180,7 @@ function Signup() {
       <p style={{ color: "#fff" }}>HEY <span style={{ color: "#0ef", fontWeight: "600", fontSize: "1.2em" }}>{user}</span>!</p>
 
       <h3 style={{ color: "#fff" }}>
-        Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}>Arsh</Link>
+        <span style={{ color: '#0ef', textDecoration: 'none' }}>AskMeOut</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}>Arsh</Link>
       </h3>
     </div>
   )

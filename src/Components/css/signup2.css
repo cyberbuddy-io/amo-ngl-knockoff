@@ -21,8 +21,8 @@
 
 .signup-container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 240px;
+  height: 240px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,11 +31,11 @@
 .signup-container span {
   position: absolute;
   left: 0;
-  width: 10px;
-  height: 4px;
+  width: 20px;
+  height: 6px;
   background: #2c4766;
   border-radius: 8px;
-  transform-origin: 100px;
+  transform-origin: 120px;
   transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
   animation: animate 3s linear infinite;
   animation-delay: calc(var(--i) * (3s / 50));
@@ -112,7 +112,10 @@
 
 .signup-input-showPassword {
   margin: -5px 0 10px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   font-size: 0.85em;
   color: white;
 }
@@ -144,4 +147,59 @@
 
 .login-link .login-link-link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .signup-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  .signup-container span {
+    width: 10px;
+    height: 3px;
+    transform-origin: 80px;
+  }
+
+  .signup-box {
+    width: 300px;
+  }
+
+  .signup-box form {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .signup-box h2 {
+    font-size: 1.5em;
+  }
+
+  .signup-input-box {
+    margin: 15px 0;
+  }
+
+  .signup-input-box input {
+    height: 40px;
+    font-size: 0.8em;
+  }
+
+  .signup-input-box label {
+    font-size: 0.6em;
+  }
+
+  .signup-btn {
+    height: 30px;
+    width: 80%;
+  }
+
+  .login-link {
+    margin: 10px 0;
+  }
+
+  .login-link .login-link-link {
+    font-size: 0.7em;
+  }
 }
