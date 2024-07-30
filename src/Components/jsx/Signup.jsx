@@ -176,12 +176,14 @@ function Signup() {
         <span style={{ "--i": 49 }}></span>
       </div>
 
-      <br /><br /><br />
-      <p style={{ color: "#fff" }}>HEY <span style={{ color: "#0ef", fontWeight: "600", fontSize: "1.2em" }}>{user}</span>!</p>
+      {/* <br /><br /><br /> */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+        <p style={{ color: "#fff" }}>HEY <span style={{ color: "#0ef", fontWeight: "600", fontSize: "1.2em" }}>{user}</span>!</p>
 
-      <h3 style={{ color: "#fff" }}>
-        <span style={{ color: '#0ef', textDecoration: 'none' }}>AskMeOut</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}>Arsh</Link>
-      </h3>
+        <h3 style={{ color: "#fff" }}>
+          <span style={{ color: '#0ef', textDecoration: 'none' }}>AskMeOut</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}>Arsh</Link>
+        </h3>
+      </div>
     </div>
   )
 }

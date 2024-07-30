@@ -5,6 +5,8 @@ import CopyLink from './CopyLink'
 import { db } from '../../firebase'
 import { get, ref } from 'firebase/database'
 
+import { shareMessage } from './shareMessage'
+
 function Profile() {
   let sharableLink = window.location.href.replace('profile', 'main')
 
@@ -59,7 +61,10 @@ function Profile() {
       {msgs.length > 0 ? (
         <ul>
           {msgs.map((msg, index) => (
-            <li key={index}>{msg}</li>
+            <li key={index}>
+              {msg} &nbsp;&nbsp;
+              <button onClick={() => shareMessage(msg)}>Share</button>
+            </li>
           ))}
         </ul>
       ) : (

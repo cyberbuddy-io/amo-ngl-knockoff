@@ -140,10 +140,13 @@ function Login() {
 
       </div>
 
-      <h3 style={{ color: "#fff" }}>
-        <span style={{ color: '#0ef', textDecoration: 'none' }}>AskMeOut</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}>Arsh</Link>
-      </h3>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+        <p style={{ color: '#fff' }}>Welcome Back <span style={{ color: '#0ef', fontWeight: 600, fontSize: '1.2em' }}>{user}</span>!</p>
 
+        <h3 style={{ color: "#fff" }}>
+          <span style={{ color: '#0ef', textDecoration: 'none' }}>AskMeOut</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}>Arsh</Link>
+        </h3>
+      </div>
     </div>
   )
 }

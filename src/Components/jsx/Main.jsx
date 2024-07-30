@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Arrow1 from '../imgs/Arrow 1.png'
 import Arrow2 from '../imgs/Arrow 2.png'
 import '../css/main.css'
-import CopyLink from './CopyLink'
+// import CopyLink from './CopyLink'
 import { Link } from 'react-router-dom'
 
 //import firebase
@@ -58,7 +58,8 @@ function Main() {
     })
 
     alert('message sent successfully!')
-    window.location.reload()
+    // window.location.reload()
+    setMsg('')
 
     return
 
@@ -66,44 +67,50 @@ function Main() {
   }
 
   return (
-    <div className='main'>
-      <div className="container">
-        {/* <!-- white wala --> */}
-        <div id="upper">
-          <i id="icon" className="fab fa-instagram"></i>
-          <div>
-            <p id="user">@{user}</p>
-            <p id="option">Chaliye shuru karte hai!!</p>
+    <div className='overall'>
+      <div className='main'>
+        <div className="container">
+          {/* <!-- white wala --> */}
+          <div id="upper">
+            <i id="icon" className="fab fa-instagram"></i>
+            <div>
+              <p id="user">@{user}</p>
+              <p id="option">Chaliye shuru karte hai!!</p>
+            </div>
+            <span className="emoji">&#x1F31D;</span>
           </div>
-          <span className="emoji">&#x1F31D;</span>
+          {/* <!-- input text --> */}
+          <div id="lower">
+            <textarea
+              type="text"
+              rows="4"
+              id="msg"
+              value={msg}
+              onChange={(e) => setMsg(e.target.value)}
+              placeholder="Send your message anonymously"
+            ></textarea>
+          </div>
         </div>
-        {/* <!-- input text --> */}
-        <div id="lower">
-          <textarea
-            type="text"
-            rows="4"
-            id="msg"
-            value={msg}
-            onChange={(e) => setMsg(e.target.value)}
-            placeholder="Send your message anonymously"
-          ></textarea>
+
+        <div id="buttons">
+          {/* <button type="submit" className="btn" id="sugg">Suggestions</button> */}
+
+          <button type="submit" className="btn" id="go" onClick={sendmsg}>
+            Go
+            {/* <img id="white_arrow" src={Arrow1} /> */}
+            {/* <img id="black_arrow" src={Arrow2} />  */}
+          </button>
+          <br />
         </div>
       </div>
 
-      <div id="buttons">
-        {/* <button type="submit" className="btn" id="sugg">Suggestions</button> */}
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+        <p style={{ color: '#fff', fontSize: '1.1em' }} >Get your own <Link style={{ color: '#fff', fontWeight: 600, fontSize: '1.2em' }} to='/signup' >AskMeOut</Link> Link!</p>
+        {/* <button onClick={() => { window.location.href = '/signup' }}>Click Me</button> */}
 
-        <button type="submit" className="btn" id="go" onClick={sendmsg}>
-          Go <img id="white_arrow" src={Arrow1} />
-          <img id="black_arrow" src={Arrow2} /> </button>
-        <br />
+        {/* <br /><br /> */}
+        <h3>Made by <Link to='https://avibedi1768.github.io' style={{ color: '#fff', textDecoration: 'none' }}>Arsh</Link></h3>
       </div>
-
-      <p>Get your own AskMeOut Link!</p>
-      <button onClick={() => { window.location.href = '/signup' }}>Click Me</button>
-
-      <br /><br />
-      <h3>Made by <Link to='https://avibedi1768.github.io' style={{ color: '#fff', textDecoration: 'none' }}>Arsh</Link></h3>
     </div>
   )
 }
