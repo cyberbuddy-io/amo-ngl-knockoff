@@ -113,7 +113,7 @@ function Signup() {
 
             {/* <p>{passChecker}</p> */}
 
-            <button type="submit" className="signup-btn" onClick={check}>
+            <button type="button" className="signup-btn" onClick={check}>
               Signup
               {/* <img id="white_arrow" src={Arrow1} />
             <img id="black_arrow" src={Arrow2} /> */}

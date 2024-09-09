@@ -74,7 +74,7 @@ function Login() {
             {/* <input type="checkbox" onChange={passShow} style={{ width: '16px' }} />Show password */}
             {/* <i className="far fa-eye" id="togglePassword" style={style1}></i> */}
 
-            <button type="submit" className="login-btn" onClick={match}>
+            <button type="button" className="login-btn" onClick={match}>
               Login
               {/* <img id="white_arrow" src={Arrow1} /> */}
               {/* <img id="black_arrow" src={Arrow2} /> */}
