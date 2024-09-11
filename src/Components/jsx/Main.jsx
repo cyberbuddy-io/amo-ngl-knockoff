@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Arrow1 from '../imgs/Arrow 1.png'
-import Arrow2 from '../imgs/Arrow 2.png'
+// import Arrow1 from '../imgs/Arrow 1.png'
+// import Arrow2 from '../imgs/Arrow 2.png'
 import '../css/main.css'
 // import CopyLink from './CopyLink'
 import { Link } from 'react-router-dom'
@@ -19,7 +19,7 @@ function Main() {
   let index2 = window.location.href.indexOf('&')
   let user;
   console.log(index + ' ' + index2)
-  if (index2 == -1) {
+  if (index2 === -1) {
     user = window.location.href.split('?=')[1]
     console.log(user)
   } else {
@@ -30,7 +30,7 @@ function Main() {
   function sendmsg() {
     console.log(user);
     //if msg empty, alert
-    if (msg == '') {
+    if (msg === '') {
       alert('plz enter something bruh!')
       return;
     }
@@ -95,7 +95,7 @@ function Main() {
         <div id="buttons">
           {/* <button type="submit" className="btn" id="sugg">Suggestions</button> */}
 
-          <button type="submit" className="btn" id="go" onClick={sendmsg}>
+          <button type="button" className="btn" id="go" onClick={sendmsg}>
             Go
             {/* <img id="white_arrow" src={Arrow1} /> */}
             {/* <img id="black_arrow" src={Arrow2} />  */}
@@ -105,7 +105,7 @@ function Main() {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-        <p style={{ color: '#fff', fontSize: '1.1em' }} >Get your own <Link style={{ color: '#fff', fontWeight: 600, fontSize: '1.2em' }} to='/signup' >AskMeOut</Link> Link!</p>
+        <p style={{ color: '#fff', fontSize: '1.1em' }} >Get your own <Link style={{ color: '#fff', fontWeight: 600, fontSize: '1.2em', textDecoration: 'none' }} to='/signup' >Anonygram</Link> Link!</p>
         {/* <button onClick={() => { window.location.href = '/signup' }}>Click Me</button> */}
 
         {/* <br /><br /> */}

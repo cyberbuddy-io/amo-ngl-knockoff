@@ -40,7 +40,7 @@ function Footer() {
           <h3>Follow Us</h3>
 
           <div className="social-links">
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faInstagram} /> </a>
+            <a href="https://www.instagram.com/avibedi46/" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faInstagram} /> </a>
             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faFacebookF} /> </a>
             <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faTwitter} /> </a>
             <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon icon={faPinterest} /> </a>

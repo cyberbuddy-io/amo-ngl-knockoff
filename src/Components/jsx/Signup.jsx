@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import Arrow1 from '../imgs/Arrow 1.png'
-import Arrow2 from '../imgs/Arrow 2.png'
+// import Arrow1 from '../imgs/Arrow 1.png'
+// import Arrow2 from '../imgs/Arrow 2.png'
 import '../css/signup2.css'
 
 //import firebase 
@@ -181,7 +181,7 @@ function Signup() {
         <p style={{ color: "#fff" }}>HEY <span style={{ color: "#0ef", fontWeight: "600", fontSize: "1.2em" }}>{user}</span>!</p>
 
         <h3 style={{ color: "#fff" }}>
-          <span style={{ color: '#0ef', textDecoration: 'none' }}>AskMeOut</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}>Arsh</Link>
+          <span style={{ color: '#0ef', textDecoration: 'none' }}>Anonygram</span> - Made by <Link to='https://avibedi1768.github.io' style={{ color: '#0ef', textDecoration: 'none' }}>Arsh</Link>
         </h3>
       </div>
     </div>
